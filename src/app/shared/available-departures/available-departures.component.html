@@ -1,0 +1,32 @@
+<div class="container">
+  <div *ngIf="departures.length > 0">
+    <h1 class="page-label">მატარებლების განრიგი</h1>
+    <table id="train-schedule">
+      <thead>
+        <tr>
+          <th>მატარებლის სახელი</th>
+          <th>გამგზავრების თარიღი</th>
+          <th>გამგზავრება</th>
+          <th>ჩასვლა</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let departure of departures">
+        <tr *ngFor="let train of departure.trains">
+          <td># <strong>{{ train.number }}</strong><br>{{ train.name }}</td>
+          <td>{{ train.date }}</td>
+          <td><strong>{{ train.departure }}</strong><br>{{ train.from }}</td>
+          <td><strong>{{ train.arrive }}</strong><br>{{ train.to }}</td>
+          <td><button (click)="buyTicket(departure, train)" id="order-btn">დაჯავშნა</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="message" class="messagebox">
+    {{ message }}
+  </div>
+</div>
+
+
+
+

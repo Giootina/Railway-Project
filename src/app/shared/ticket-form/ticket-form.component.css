@@ -1,0 +1,200 @@
+#succes-section{
+    margin-top: 50px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#succes-icon{
+    text-align: center;
+    font-size: 72px;
+}
+.show-ticket-text{
+    text-align: center;
+    font-family: var(--georgian-font);
+    font-weight: 800;
+    color: var(--blue);
+    margin-top: 15px;
+    font-size: 20px;
+}
+#contact-info-label{
+    font-family: var(--georgian-font);
+    color: var(--dark-blue);
+    font-weight: 800; 
+    font-size: 20px;
+    padding: 5px 15px;
+    margin: 25px auto 0 auto;
+    text-align: center;
+}
+#contact-information-section{
+    width: 100%;
+    height:60px;
+    background-color: var(--soft-white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: var(--gray);
+}
+#contact-information-section p{
+    background-color: var(--soft-white);
+    font-family: 18px;
+    font-weight: 800;
+    color: var(--dark-blue);
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+.ticket{
+    width: 100%;
+    background-color: var(--gray);
+    padding: 50px 20px;
+    position: relative;
+    margin-top: 50px;
+    box-shadow: 0 0 20px var(--dark-blue);
+    border-radius: 10px;
+    border: 2px dashed var(--dark-blue);
+}
+#ticket-barcode{
+    font-family: var(--barcode-font); 
+    font-size: 48px;
+    text-align: center;
+}
+.ticket-id-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 25px 5px;
+}
+.ticket-id-section p{
+    font-family: var(--georgian-font);
+    font-weight: 800;
+}
+#departure-info-section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin:  10px 0;
+    background-color: var(--soft-white);
+}
+#passenger-label{
+    text-align: center;
+    font-family: var(--georgian-font);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--dark-blue);
+    margin: 50px 0 20px 0;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5px;
+    margin: 5px 0;
+    background-color: var(--soft-white);
+}
+li p {
+    text-align: center;
+    width: 25%;
+    font-family: var(--georgian-font);
+}
+#delete-ticket-btn{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--error-red);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: var(--georgian-font);
+    font-weight: 800;
+    color: var(--soft-white);
+    cursor: pointer;
+}
+@media only screen and (max-width: 1024px){
+    #ticket-barcode{
+        font-size: 36px;
+    }
+    .ticket-id-section p{
+        font-size: 12px; 
+    }
+    #departure-info-section{
+        font-size: 14px;
+    }
+    #contact-info-label{
+        font-size: 18px;
+        margin: 20px auto 10px auto;
+    }
+    #passenger-label{
+        font-size: 16px;
+        margin: 40px 0 20px 0;
+    }
+    li p {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 768px){
+    #ticket-barcode{
+        font-size: 20px;
+    }
+    .ticket-id-section{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 25px 5px;
+        flex-direction: column;
+    }
+    #departure-info-section{
+        font-size: 12px;
+    }
+    #contact-info-label{
+        font-size: 16px;
+        margin: 15px auto 10px auto;
+    }
+    #passenger-label{
+        font-size: 14px;
+        margin: 30px 0 15px 0;
+    }
+    li p {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 500px){
+    #ticket-barcode{
+        font-size: 16px;
+    }
+    .ticket-id-section p{
+        font-size: 10px;
+    }
+    #departure-info-section{
+        font-size: 10px;
+    }    #contact-info-label{
+        font-size: 14px;
+    }
+    #passenger-label{
+        font-size: 14px;
+        margin: 20px 0 10px 0;
+    }
+    li p {
+        font-size: 10px;
+    }
+    #contact-information-section p{
+        background-color: var(--soft-white);
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--dark-blue);
+        padding: 15px 0;
+    }
+    #delete-ticket-btn{
+        font-size: 12px;
+        padding: 5px 10px;
+        font-family: var(--georgian-font);
+        font-weight: 800;
+        color: var(--soft-white);
+        cursor: pointer;
+}
+}

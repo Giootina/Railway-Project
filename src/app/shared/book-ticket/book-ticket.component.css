@@ -1,0 +1,375 @@
+#train-details-section{
+  background-color: var(--dark-blue);
+  margin-top: 50px;
+  padding: 25px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--georgian-font);
+  color: var(--soft-white);
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--dark-blue);
+}
+#passenger-form{
+  width: 100%;
+}
+#passenger-form-inner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+#passenger-info-form{
+  border-radius: 10px;
+  width: 75%;
+  background-color: var(--gray);
+  padding: 20px 15px;
+}
+.passenger-info-form-label{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--);
+  font-family: var(--georgian-font);
+  color: var(--dark-blue);
+  text-decoration: underline;
+  text-underline-offset: 10px  ;
+  text-decoration-thickness: 3px;
+  margin: 30px 0;
+}
+#contact-info-section{
+  width: 100%;
+  display: flex;
+  gap: 15px;
+}
+#contact-info-section input{
+  flex:1;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  padding: 0 10px;
+  border: 1px dashed var(--dark-blue);
+  font-family: var(--georgian-font);
+  outline: none;
+}
+.passenger-number{
+  color: var(--blue);
+  font-family: var(--georgian-font);
+  margin: 15px 0;
+  font-weight: 600;
+}
+#passenger-info-section{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+#passenger-info-section input{
+  width: 30%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  padding: 0 10px;
+  border: 1px dashed var(--dark-blue);
+  outline: none;
+  font-family: var(--georgian-font);
+}
+.choose-seat-btn{
+
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;  
+  background-color: var(--blue);
+  font-family: var(--georgian-font);
+  padding: 5px;
+  color: var(--soft-white);
+}
+#invoice-form{
+  background-color: var(--gray);
+  border: 2px dashed  var(--dark-blue);
+  width: 25%;
+  height: 380px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#invoice-label{
+  background-color: var(--dark-blue);
+  color: var(--soft-white);
+  height: 50px;
+  font-size: 18px;
+  font-family: var(--georgian-font);
+  font-weight: 800;
+  letter-spacing: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#seat-price-header{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 20px;
+
+}
+#seat-price-header span{
+  font-family: var(--georgian-font);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--dark-blue);
+}
+.seat-price-section{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.seat-price-section span{
+  font-family: var(--georgian-font);
+  margin: 5px;
+}
+#price-label{
+  padding: 10px 0;
+  text-align: center;
+  font-style: var(--georgian-font);
+  font-size: 18px;
+  background-color: white;
+  color: var(--dark-blue);
+}
+.terms-label{
+  display: flex;
+  font-family: var(--georgian-font);
+  font-size: 14px;
+  padding: 5px 0;
+}
+#order-btn{
+  display: block;
+  margin: 0px auto;
+  width: 75%;
+  height: 50px;
+  font-family: var(--georgian-font);
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+body.popup-open {
+  overflow: hidden;
+}
+#seats--popup.active,#payment-popup.active {
+  display: block;
+}
+#seats--popup,#payment-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px var(--dark-blue);
+}
+#seats--popup{
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border: 2px dashed var(--blue);
+}
+#vagons-section{
+  width: 100%;
+  display: flex;
+}
+#vagons-section img{
+  width: 100%;
+  cursor: pointer;
+}
+h3,h4{
+  text-align: center;
+}
+#seats-section{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap:  15px;
+}
+#seat-popup-label{
+  color: var(--dark-blue);
+  font-weight: 800;
+  font-family: var(--georgian-font);
+  letter-spacing: 2px;
+}
+#seat-vagon-label{
+  color: var(--blue);
+  margin: 15px 0 15px 0;
+}
+.vagon-class-name{
+  font-family:  var(--georgian-font);
+  color: var(--coral);
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+#seats-section button{
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 310px;
+  background-color: var(--light-blue);
+  font-weight: 600;
+}
+.seats-section img{
+  width: 10%;
+  height: 40px;
+}
+p{
+  text-align: center;
+}
+#selected-seats-label{
+  margin: 15px 0 25px 0;
+}
+#payment-popup{
+  background-color: var(--gray);
+  border: 2px dashed var(--dark-blue);
+  width: 500px;
+}
+#payment-popup-header{
+  width: 100%;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--dark-blue);
+}
+#payment-popup-body{
+  display: flex;
+  flex-direction: column;
+}
+#payment-popup label{
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+#payment-popup input{
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+#datecv2-section{
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+#payment-popup-paybtn{
+  width: 100%;
+  height: 40px;
+  font-family: var(--georgian-font);
+  color:var(--gray);
+  background-color: var(--dark-blue);
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popup-closebtn{ 
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.popup-closebtn:hover{
+  background-color: var(--error-red);
+}
+@media only screen and (max-width: 1024px) {
+  #seat-price-header{
+    justify-content: space-between;
+  }
+  .seat-price-section span{
+    font-size: 14px;
+    font-family: var(--georgian-font);
+    margin: 5px;
+  }
+  #price-label{
+    padding: 10px 0;
+    text-align: center;
+    font-style: var(--georgian-font);
+    font-size: 16px;
+    background-color: white;
+    color: var(--dark-blue);
+  }
+  .terms-label{
+    display: flex;
+    font-family: var(--georgian-font);
+    font-size: 12px;
+    padding: 10px 3px;
+  }
+  #order-btn{
+    width: 60%;
+    height: 50px;
+    font-size: 16px;
+  }
+  .choose-seat-btn{
+    font-size: 12px;
+    background-color: var(--blue);
+    font-family: var(--georgian-font);
+  }
+}
+@media only screen and (max-width: 768px){
+  #passenger-form-inner{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #passenger-info-form{
+    width: 100%;
+  }
+  #invoice-form{
+    width: 80%;
+  }
+  #passenger-info-section{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+  }
+  #contact-info-section{
+    flex-direction: column;
+    padding: 0px 20px;
+    height: 110px;
+    gap: 10px;
+  }
+  #passenger-info-section input{
+    width: 100%;
+  }
+  #payment-popup{
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 500px){
+  .passenger-info-form-label{
+    font-size: 16px;
+    text-underline-offset: 8px  ;
+    text-decoration-thickness: 2px;
+    margin: 30px 0;
+  }
+  #seats--popup.active{
+    width: 300px;
+    height: 600px;
+  }
+  #seats-section{
+    gap: 5px;
+  }
+}
+

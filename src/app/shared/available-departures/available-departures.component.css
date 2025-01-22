@@ -1,0 +1,56 @@
+#train-list-label{
+    text-align: center;
+    margin: 75px auto 50px auto;
+    letter-spacing: 5px;
+    font-family: var(--georgian-font);
+    text-shadow: 0 0 3px var(--dark-blue);
+    color: var(--blue);
+}
+#train-schedule{
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px var(--dark-blue);
+    text-align: center;
+    font-family: var(--georgian-font);
+    border: 2px solid var(--dark-blue);
+    overflow: scroll;
+    overflow: hidden;
+}
+th{
+    padding: 15px;
+    background-color: var(--dark-blue);
+    color:var(--soft-white);
+}
+tr{
+    background-color: var(--gray);
+}
+td{
+    border: 2px solid var(--dark-blue);
+    padding: 15px 5px;
+}
+td button{ 
+    padding: 15px 10px;
+    font-family: var(--georgian-font);
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    background-color:var(--dark-blue);
+    color: var(--gray);
+    cursor: pointer;
+    box-shadow: 2px 2px 5px var(--dark-blue);
+}
+@media only screen and (max-width: 768px){
+    th,td,#order-btn{
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+@media only screen and (max-width: 500px){
+    th,td{
+        font-size: 10px;
+        padding: 1px;
+    }
+    #order-btn{
+        padding:10px 2px
+    }
+}

@@ -1,0 +1,218 @@
+#hero-section{
+    width: 100%;
+    height: 550px ;
+    margin: 50px 0;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0px 0px 10px var(--dark-blue);
+    background-size:cover;
+    background-position: center;
+    background-image: url('https://i.ibb.co/BspSS7v/colorful-triangle-background-with-blue-orange-triangle-pattern.jpg');
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+#contact-number{
+    align-self: flex-end;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: var(--dark-blue);
+    background-color: var(--soft-white);
+    text-shadow: 0px 5px 5px var(--dark-blue);
+    box-shadow: 0px 0px 15px var(--dark-blue);  
+}
+#hero-text{
+    font-size: 32px;
+    font-weight: 800;
+    font-family: var(--georgian-font);
+    text-shadow: 0 0 5px var(--dark-blue);
+    color: var(--soft-white);
+    letter-spacing: 10px;
+}
+#search-form{
+    width: 100%;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px var(--light-blue);
+    display: flex;
+    justify-content: space-between;
+    gap:15px;
+    backdrop-filter: blur(3px);
+    border: 2px solid var(--dark-blue);
+}
+#search-form-left{
+    width: 50%;
+    display: flex;
+    gap: 15px;
+}
+#search-form-right{
+    width: 50%;
+    display: flex;
+    gap: 15px;
+}
+#form-from, #form-to, #form-date, #form-passengers{
+    flex: 1;
+    height: 60px;
+    padding: 0 10px;
+    font-weight: 400;
+    font-family: var(--georgian-font);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+#form-submit-btn{
+    width: 60px;
+    height: 60px;
+    display: block;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+#offers-section{
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 25px;
+    background-color: var(--blue);
+    box-shadow: 0px 0px 10px var(--dark-blue);
+}
+.offer-card{
+    flex: 1;
+    height: 80px;
+    padding: 15px;
+    font-size: 28px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--dark-blue);
+    background-color: var(--light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.offer-card i{
+    text-shadow:0px 0px 5px var(--blue);
+    margin-right: 10px;
+}
+.offer-card p{
+    font-family: var(--georgian-font);
+    font-size: 16px;
+}
+#faq-label{
+    margin: 30px 0 20px 0;
+    font-family: var(--georgian-font);
+    color: var(--dark-blue);
+    font-weight: 800;
+}
+#faq-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    align-items: start;
+}
+.faq-card {
+    padding: 15px;
+    font-family: var(--georgian-font);
+    border: 1px solid var(--dark-blue);
+    border-radius: 5px;
+    background-color: var(--gray);
+    box-shadow: 1px 5px 10px var(--dark-blue);
+}
+.faq-card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+}
+.faq-card-header button{
+    border: none;
+    cursor: pointer;
+}
+.faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+.faq-card.open .faq-body {
+    max-height: 200px;
+}
+@media only screen and (max-width: 1024px) {
+    #hero-text{
+        font-size: 28px;
+        letter-spacing: 5px;
+    }
+    #offers-section{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+    }
+    #search-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #faq-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .faq-card {
+        width: 100%;
+    }
+    #search-form-left,#search-form-right{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    #form-submit-btn{
+        width: 100%;
+        height: 50px;
+    }
+  }
+  @media only screen and (max-width: 768px){
+    #hero-section{
+        margin: 20px 0;
+    }
+    #offers-section{
+        width: 100%;
+        padding: 20px 10px;
+        gap: 15px;
+    }
+  }
+  @media only screen and (max-width: 500px){
+    #search-form-left,#search-form-right{
+        height: 100px;
+        flex-direction: column;
+    }
+    #offers-section{
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(4, 1fr);
+        gap: 15px; 
+    }
+    #faq-label{
+        font-size: 20px;
+    }
+    .faq-card {
+        width: 100%;
+        justify-content: space-around;
+    }
+    .offer-card p{
+        font-size: 14px;
+    }
+    .faq-card-header span {
+        font-size: 12px;
+    };
+  }
+
+
+
+  
+
+

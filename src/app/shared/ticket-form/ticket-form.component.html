@@ -1,0 +1,37 @@
+<div class="container">
+  <div id="ticket-form" *ngIf="ticketData">
+    <section id="succes-section">
+      <i class="fa-solid fa-circle-check fa-beat fa-2xl" style="color: var(--succes-green);" id="succes-icon"></i>
+    </section>
+    <p class="show-ticket-text">ბილეთის საფასური გადახდილია<br>იხილეთ ბილეთი</p>
+    <div class="ticket">
+      <p id="ticket-barcode">{{ ticketData.id }}</p>
+      <section class="ticket-id-section">
+        <p id="ticket-id-label"><strong>ბილეთის ნომერი:</strong> {{ ticketData.id }}</p>
+        <p><strong>გაცემის თარიღი:</strong> {{ ticketData.date }}</p>
+      </section>
+      <section id="departure-info-section">
+        <p><strong>გამგზავრება</strong><br>
+        <span>{{ ticketData.train.from }} {{ ticketData.train.departure }}</span></p>
+        <p><strong>ჩასვლა</strong><br>
+        <span>{{ ticketData.train.to }} {{ ticketData.train.arrive }}</span></p>
+        <p><strong>გამგზავრების თარიღი</strong><br>
+        <span>{{ ticketData.train.date }}</span></p>
+      </section>
+      <p id= "contact-info-label">საკონტაქტო ინფორმაცია</p>
+      <div id="contact-information-section">
+        <p><strong>Email: </strong>{{ ticketData.email }}</p>
+        <P><strong>ტელეფონი: </strong>{{ ticketData.phone }}</P>
+      </div>
+      <h5 id="passenger-label">მგზავრები</h5>
+      <ul id="passengers-list">
+        <li *ngFor="let passenger of ticketData.persons">
+          <p><strong>სახელი:</strong><br> {{ passenger.name }}</p>
+          <p><strong>გვარი:</strong> <br> {{ passenger.surname }}</p>
+          <p><strong>პირადი ნომერი:</strong> <br> {{ passenger.idNumber }}</p>
+          <p><strong>ადგილი:</strong> <br> {{ passenger.seat.number }}</p>
+        </li>
+      </ul>
+      <button (click)="deleteTicket()" id="delete-ticket-btn">ბილეთის გაუქმება</button>
+    </div>
+  </div>

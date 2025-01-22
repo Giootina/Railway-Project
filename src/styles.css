@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --gray:        #E9ECEF;
+    --coral:       #FF7F50;
+    --blue:        #457B9D;
+    --dark-blue:   #1D3557;
+    --light-blue:  #A8DADC;
+    --soft-white:  #F1FAEE;
+    --error-red:   #FF3B30;
+    --succes-green:#00E743;
+    --stripe-font: "Faster One", sans-serif;
+    --barcode-font: "Libre Barcode 39", sans-serif;
+    --georgian-font: "Noto Sans Georgian", sans-serif;
+}
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.messagebox{
+    width: 100%;
+    margin: 25px 0 50px 0;
+    font-family: var(--georgian-font);
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--error-red);
+    animation: messagebox 2s linear infinite;
+}
+.page-label{
+    text-align: center;
+    margin: 75px auto 50px auto;
+    letter-spacing: 5px;
+    font-family: var(--georgian-font);
+    text-shadow: 0 0 3px var(--dark-blue);
+    color: var(--blue);
+}
+input.ng-touched.ng-valid{
+    border: 2px solid var(--succes-green) !important;
+}
+input.ng-touched.ng-invalid{
+    border: 2px solid var(--error-red) !important;
+}
+select.ng-touched.ng-valid{
+    border: 2px solid var(--succes-green)!important;
+}
+
+select.ng-touched.ng-invalid{
+    border: 2px solid var(--error-red) !important;
+}
+@keyframes messagebox {
+    0%{
+        letter-spacing: 2px;
+    }
+    50%{
+        letter-spacing: 5px;
+    }
+    100%{
+        letter-spacing: 2px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .container{
+        padding: 0 15px;
+    }
+    .page-label{
+        font-size: 20px;
+        margin: 40px auto 20px auto;
+        letter-spacing: 3px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .container{
+        padding: 0 10px;
+    }
+    .page-label{
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+}
