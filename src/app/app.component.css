@@ -1,0 +1,105 @@
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+header{
+    height: 100px;
+    background-color: var(--blue);
+}
+#header-inner{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header-logo-section{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap:15px;
+}
+#header-site-logo{
+    width: 100px;
+    cursor: pointer;
+}
+#header-site-name{
+    font-family: var(--stripe-font);
+    font-size: 42px;
+    font-weight: 200;
+    color: var(--soft-white);
+    cursor: pointer;
+    white-space: nowrap;
+    margin-bottom: 10px ;
+}
+#check-ticket-button{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 5px;
+    color: var(--dark-blue);
+    font-family: var(--georgian-font);
+    background-color: var(--soft-white);
+}
+main{
+    flex: 1;
+    padding: 75px 0;
+}
+footer{
+    height: 80px;
+    background-color: var(--dark-blue);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+#footer-site-name{
+    font-family: var(--stripe-font);
+    font-weight: 200;
+    font-size: 38px;
+    text-align: center;
+    color: var(--soft-white); 
+}
+@media only screen and (max-width: 1024px){
+    #header-site-name{
+        font-size: 38px;
+    }
+    main{
+        padding: 50px 0;
+    }
+    #footer-site-name{
+        font-size: 28px;
+    }
+}
+@media only screen and (max-width: 768px){
+    #header-logo-section{
+        gap: 0;
+    }
+    #header-site-logo{
+        transform: scale(70%);
+    }
+    #header-site-name{
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+    #check-ticket-button{
+        font-size: 12px;
+        padding: 10px 5px;
+    }
+    main{
+        padding: 25px 0;
+    }
+    #footer-site-name{
+        font-size: 24px;
+    }
+}
+@media only screen and (max-width: 500px){
+    #header-site-logo{
+        transform: scale(100%);
+    }
+    #header-site-name{
+        display: none;
+    }
+    #footer-site-name{
+        font-size: 18px;
+    }
+}

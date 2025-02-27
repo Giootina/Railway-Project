@@ -1,0 +1,51 @@
+<div class="container">
+  <div *ngIf="departures.length > 0">
+    <h1 class="page-label">მატარებლების განრიგი</h1>
+    <table class="train-schedule big">
+      <thead>
+        <tr>
+          <th>სახელი</th>
+          <th>თარიღი</th>
+          <th>გამგზავრება</th>
+          <th>ჩასვლა</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let departure of departures">
+        <tr *ngFor="let train of departure.trains">
+          <td><p class="font-bolder"># {{ train.number }}</p>{{ train.name }}</td>
+          <td>{{ train.date }}</td>
+          <td><p class="font-bolder">{{ train.departure }}</p>{{ train.from }}</td>
+          <td><p class="font-bolder">{{ train.arrive }}</p>{{ train.to }}</td>
+          <td><button (click)="chooseDeparture(train)" class="order-btn">დაჯავშნა</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="train-schedule small">
+      <thead>
+        <tr>
+          <th>სახელი</th>
+          <th>თარიღი</th>
+          <th>გამგზავრება</th>
+          <th>ჩასვლა</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let departure of departures">
+        <ng-container *ngFor="let train of departure.trains">
+          <tr>
+            <td><p class="font-bolder"># {{ train.number }}</p>{{ train.name }}</td>
+            <td>{{ train.date }}</td>
+            <td><p class="font-bolder">{{ train.departure }}</p>{{ train.from }}</td>
+            <td><p class="font-bolder">{{ train.arrive }}</p>{{ train.to }}</td>
+          </tr>
+          <tr>
+            <td colspan="4"><button (click)="chooseDeparture(train)" class="order-btn">დაჯავშნა</button></td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="message" class="messagebox">
+    {{ message }}
+  </div>
+</div>

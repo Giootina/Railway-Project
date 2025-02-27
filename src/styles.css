@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--georgian-font);
+}
+:root{
+    --gray:        #E9ECEF;
+    --coral:       #FF7F50;
+    --blue:        #457B9D;
+    --dark-gray:   #A9A9A9;
+    --dark-blue:   #1D3557;
+    --neon-blue:   #4C6AFE;
+    --light-blue:  #A8DADC;
+    --soft-white:  #F1FAEE;
+    --simple-white:#FFFFFF;
+    --error-red:   #FF3B30;
+    --succes-green:#1FDA6F;
+    --stripe-font: "Faster-One", sans-serif;
+    --barcode-font: "Barcode-Font", sans-serif;
+    --georgian-font: "Noto-Sans-Georgian",sans-serif;
+}
+@font-face {
+    font-display: swap; 
+    font-family: 'Noto-Sans-Georgian';
+    src: url('/fonts/Noto-Sans-Georgian-Font.woff2') format('woff2'); 
+}
+@font-face {
+    font-display: swap; 
+    font-family: 'Barcode-Font';
+    src: url('/fonts/Barcode-Font.woff2') format('woff2'); 
+}
+@font-face {
+    font-display: swap;
+    font-family: "Faster-One";
+    src: url('/fonts/Faster-One-Font.woff2') format('woff2'); 
+}
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+button,input,select{
+    cursor: pointer;
+}
+button{
+    border: none;
+}
+button[disabled ]{
+    color: var(--gray)!important;
+    background-color:var(--dark-gray)!important;
+    cursor: not-allowed!important;
+}
+button[active]{
+    color: var(--soft-white)!important;
+    background-color: var(--dark-blue)!important;
+    transition: 0.35s;
+}
+.messagebox{
+    width: 100%;
+    margin: 25px 0 50px 0;
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--error-red);
+}.page-label{
+    text-align: center;
+    margin: 0 auto 75px auto;
+    letter-spacing: 5px;
+    color: var(--blue);
+}
+.font-bolder{
+    font-weight: 800;
+    transform: scale(120%);
+}
+input.ng-dirty.ng-valid,select.ng-dirty.ng-valid {
+  border: 2px solid var(--succes-green) !important;
+}
+input.ng-dirty.ng-invalid,select.ng-dirty.ng-invalid {
+  border: 2px solid var(--error-red) !important;
+}
+@media only screen and (max-width: 1024px){
+    .page-label{
+        font-size: 28px;
+        margin: 0 auto 50px auto;
+    }
+}
+@media only screen and (max-width: 768px){
+    .container{
+        padding: 0 15px;
+    }
+    .page-label{
+        font-size: 24px;
+        margin: 0 auto 25px auto;
+        letter-spacing: 2px;
+    }
+    .font-bolder{
+        transform: scale(115%);
+    } 
+}
+@media only screen and (max-width: 500px){
+    .container{
+        padding: 0 10px;
+    }
+    .page-label{
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    .font-bolder{
+        transform: scale(110%);
+    }
+}

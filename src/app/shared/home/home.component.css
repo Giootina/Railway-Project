@@ -1,0 +1,255 @@
+#hero-section{
+    width: 100%;
+    min-height: 550px ;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    background: url('/images/hero-section-background.png') center / cover;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#contact-number{
+    padding: 10px 25px;
+    align-self: flex-end;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--dark-blue);
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: var(--soft-white);
+    display: flex;
+    gap: 10px; 
+}
+#hero-text{
+    font-weight: 800;
+    color: var(--soft-white);
+    letter-spacing:10px;
+}
+#search-form{
+    width: 100%;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid var(--dark-blue);
+    backdrop-filter: blur(10px);
+    display: flex;
+    gap:15px;
+}
+#search-form section{
+    flex:1;
+    display: flex;
+    gap: 15px;
+}   
+#search-form section select,input{
+    flex: 1;
+    height: 55px;
+    padding: 0 10px;
+    font-weight: 800;
+    color: var(--dark-blue);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    appearance: none;
+}
+#search-form section select option{
+    font-weight: 600;
+}
+#form-submit-btn{
+    width: 55px;
+    height: 55px;
+    display: block;
+    border-radius: 5px;
+}
+#offers-section{
+    width: 100%;
+    margin: 50px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--blue);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.offer-card{
+    height: 80px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+.offer-card span{
+    display: block;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+.offer-card img{
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+#faq-label{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark-blue);
+}
+#faq-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    gap: 15px;
+}
+.faq-card{
+    padding: 15px;
+    border: 2px solid var(--dark-blue);
+    border-radius: 5px;
+    background-color: var(--gray);
+    box-shadow: 0 3px 0 0 var(--dark-blue);
+}
+.faq-card-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.faq-card-header span{
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--dark-blue);
+}
+.faq-card-header button{
+    background-color: var(--gray);
+}
+.faq-card-header img {
+    transition: 0.3s ease, filter 0.3s steps(1);
+}
+.faq-card-header .rotated {
+    transform: rotate(180deg);
+    filter: invert(28%) sepia(100%) saturate(5663%) hue-rotate(357deg) brightness(96%) contrast(100%);
+}
+.faq-card hr{
+    margin: 15px 0;
+}
+.faq-body{
+    max-height: 0;
+    transition: 0.75s ease;
+    overflow: hidden;
+}
+.faq-body p{
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+.faq-card.open .faq-body{
+    max-height: 205px;
+}
+@media only screen and (max-width: 1024px){
+    #hero-text{
+        font-size: 28px;
+        letter-spacing:5px;
+    }
+    #search-form{
+        flex-direction: column;
+    }
+    #form-submit-btn{
+        width: 100%;
+        height: 55px;
+    }
+    #offers-section{
+        margin: 40px 0;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    #faq-label{
+        margin-bottom: 15px;
+    }
+    .faq-card-header span{
+        font-size: 16px;  
+    }
+    .faq-body p{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 768px){
+    #hero-text{
+        font-size: 21px;
+        letter-spacing:1px;
+    }
+    #offers-section{
+        margin: 30px 0;
+    }
+    .offer-card span{
+        font-size: 14px;
+    }
+    #faq-label{
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    #faq-section {
+        grid-template-columns: 1fr;  
+    }
+    .faq-card-header span{
+        font-size: 14px;
+    }
+    .faq-card hr{
+        margin: 10px 0;
+    }
+    .faq-body p{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 500px){
+    #contact-number{
+        align-self: center;
+    }
+    #hero-text span{
+        display: none;
+    }
+    #search-form section{
+        flex-direction: column;
+    }
+    #offers-section{
+        margin: 20px 0;
+        grid-template-columns: 1fr; 
+    }
+    #search-form section select,input{
+        height: 45px;
+        flex: none;
+    }
+    #form-submit-btn{
+        height: 45px;
+    }
+    .offer-card span{
+        text-align: left;
+    }
+    .offer-card img{
+        width: 50px;
+        height: 50px;
+    }
+    #faq-label{
+        font-size: 16px;
+    }
+    .faq-card-header span{
+        font-size: 12px;
+    }
+}
+
+
+
+
+    
+
+
+
+
+
+
+
+
+  
+
+

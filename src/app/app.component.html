@@ -1,0 +1,20 @@
+<div id="wrapper">
+  <header>
+      <div class="container">
+          <div id="header-inner">
+                <section id="header-logo-section">
+                    <img id="header-site-logo" src="images/train-logo.png" alt="Corrupted File!" routerLinkActive="active" routerLink="">
+                    <h1 id="header-site-name" routerLinkActive="active" routerLink="">Railway Express</h1>
+                </section>
+                <button id="check-ticket-button" (click)="pageReloader()" >ბილეთის შემოწმება</button>
+          </div>
+      </div>
+  </header>
+  <main>
+      <router-outlet></router-outlet>
+  </main>
+  <footer>
+      <h2 id="footer-site-name">Railway Express 2025 &#169;</h2>
+  </footer>
+</div>
+

@@ -1,0 +1,84 @@
+.train-schedule.big,
+.train-schedule.small{
+    width: 100%;
+    text-align: center;
+    border: 2px solid var(--dark-blue); 
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.train-schedule.small{
+    display: none;
+}
+th{
+    width: 100%;
+    padding: 15px 5px;
+    font-size: 18px;
+    font-weight: 800;
+    color:var(--soft-white);
+    background-color: var(--dark-blue);
+}
+td{
+    padding: 10px 5px;
+    font-weight: 600;
+    color: var(--dark-blue);
+    border: 2px solid var(--dark-blue);
+    background-color: var(--gray);
+}
+.order-btn{ 
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--soft-white);
+    border-radius: 5px;
+    background-color:var(--dark-blue);
+}
+@media only screen and (max-width: 1024px){
+    th{
+        font-size: 16px;
+    }
+    td{
+        font-size: 14px;
+    }
+    .order-btn{ 
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .train-schedule.big{
+        display: none;
+    }
+    .train-schedule.small{
+        display: table;
+    }
+    th{
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+    td{
+        padding: 5px 2px;
+        font-size: 12px;
+        border: 1px solid var(--dark-blue);
+    }
+    .order-btn{ 
+        width: 100%;
+        letter-spacing: 2px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .train-schedule.small th:nth-child(2),
+    .train-schedule.small td:nth-child(2) {
+        display: none;
+    }
+    th{
+        padding:5px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    td{
+        padding: 5px;
+    }
+    .order-btn{
+        padding: 5px 25px;
+    }
+}
+

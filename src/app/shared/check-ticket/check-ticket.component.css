@@ -1,0 +1,593 @@
+#check-ticket-form{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+#ticketId{
+    flex:4;
+    height: 100%;
+    padding: 0 10px;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid var(--blue);
+    text-transform: uppercase;
+}
+#search-btn{
+    flex: 1;
+    height: 100%;
+    font-weight: 600;
+    border-radius: 10px;
+}
+#success-icon{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    animation: succes-icon-animation 1.5s infinite ease-out;
+}
+.show-ticket-text{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--blue); 
+}
+#ticket-contanct-information-section{
+    width: 100%;
+    margin: 50px 0;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 10px double var(--dark-blue);
+    background-color: var(--gray);
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap:15px;
+}
+#ticket-contanct-information-section p{
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--dark-blue);
+}
+#ticket-contanct-information-section a{
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+#ticket-contanct-information-section span{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+.ticket-form{
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    overflow: hidden;
+}
+.ticket-ticketpass{
+    flex: 2;
+    padding: 25px 50px;
+    background: url('/images/georgia-map-dots.png') no-repeat center / contain;
+    background-color: var(--neon-blue);
+    border: 2px solid var(--dark-blue);
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.ticket-bubble-top{
+    width: 50px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: var(--simple-white);
+    border: 2px solid var(--dark-blue);
+    position: absolute;
+    right: -25px;
+    top: -20px;
+}
+.ticket-bubble-bottom{
+    width: 50px;
+    height: 40px;
+    background-color: var(--simple-white);
+    border: 2px solid var(--dark-blue);
+    position: absolute;
+    right: -25px;
+    bottom: -20px;
+    border-radius: 100%;
+}
+.ticket-stamp{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: -100px;
+    top: 100px;
+    opacity: 0.7;
+}
+.ticket-header{
+    width: 100%;
+    color: var(--soft-white); 
+    display: flex;
+    align-items: center;
+    gap: 20px ;
+}
+.ticket-header img{
+    width: 150px;
+}
+.ticket-header h2{
+    margin-bottom: 10px;
+    font-family: var(--stripe-font);
+    font-size: 36px;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+.ticket-barcode{
+    font-family: var(--barcode-font);
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--dark-blue);
+}
+.ticket-main{
+    display: flex;
+    justify-content: space-between;
+}
+.ticket-main section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.ticket-main section p{
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--dark-blue);
+}
+.ticket-main section h4{
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--soft-white);
+}
+.ticket-main section span{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--soft-white);
+}
+.ticket-footer{
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: space-between;
+}
+.ticket-footer p{
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--dark-blue);
+}
+.ticket-footer p span{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--soft-white);
+}
+.ticket-boardingpass{
+    flex: 1;
+    background: url('/images/georgia-map-dots.png') var(--simple-white) no-repeat center / contain;
+    border-radius:0 20px 20px 0;
+    border: 2px solid var(--dark-blue);
+    border-left: 3px dashed var(--neon-blue);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ticket-boardingpass-header{
+    padding: 10px;
+    background-color: var(--neon-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.ticket-boardingpass-header img{
+    width:60px;
+}
+.ticket-boardingpass-header h2{
+    margin-bottom: 5px;
+    font-family: var(--stripe-font);
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+    color: var(--soft-white);
+}
+.ticket-boardingpass-main{
+    flex: 1;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.ticket-boardingpass-main h5{
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+    color: var(--dark-blue);
+    background-color: var(--gray);
+}
+.ticket-boardingpass-departure-section{
+    display: flex;
+    justify-content: space-evenly;
+}
+.ticket-boardingpass-departure-section div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.ticket-boardingpass-departure-section div p{
+    font-weight: 600;
+    color: var(--dark-blue);
+    text-align: center;
+}
+.ticket-boardingpass-departure-section div h4 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--neon-blue);
+}
+.ticket-boardingpass-departure-section div span{
+    font-weight: 600;
+    color: var(--neon-blue);
+    display: block;
+}
+.boardingpass-passenger-name-section p{
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--dark-blue);
+}
+.boardingpass-passenger-name-section span{
+    font-weight: 600;
+    text-align: center;
+    color: var(--neon-blue); 
+    display: block;
+}
+.ticket-boardingpass-info-section{ 
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: space-around;
+}
+.ticket-boardingpass-info-section p{
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--dark-blue);
+}
+.ticket-boardingpass-info-section p span{
+    font-weight: 600;
+    color: var(--neon-blue);
+}
+.ticket-boardingpass-footer{
+    padding: 5px 5px 10px 5px ;
+}
+.ticket-boardingpass-footer p{
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--dark-blue);
+}
+.ticket-boardingpass-footer span{
+    font-family: var(--barcode-font);
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 5px;
+    display: block;
+}
+#delete-ticket-btn{
+    justify-self: flex-end;
+    padding: 20px 50px;
+    font-size: 18px;
+    font-weight: 800;
+    color:var(--soft-white);
+    border-radius: 3px;
+    background-color: var(--error-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+}
+#delete-ticket-btn div{
+    width:30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: var(--simple-white);
+    position: absolute;
+}
+#button-bubble-left{
+    left: -15px;
+}
+#button-bubble-right{
+    right: -15px;
+}
+@media only screen and (max-width: 1024px){
+    #succes-section{
+        font-size: 42px;
+    }
+    #ticket-contanct-information-section{
+        margin: 35px 0;
+    }
+    #ticket-contanct-information-section p{
+        font-size: 16px;
+    }
+    #ticket-contanct-information-section a{
+        font-size: 14px;
+    }
+    #ticket-contanct-information-section span{
+        font-size: 14px;
+    }
+    .ticket-form{
+        margin-bottom: 35px;
+    }
+    .ticket-header img{
+        width: 100px;
+    }
+    .ticket-header h2{
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+    .ticket-barcode{
+        font-size: 26px;
+        letter-spacing: 2px;
+    }
+    .ticket-footer p{
+        font-size: 16px;
+    }
+    .ticket-footer span{
+        font-size: 14px;
+    }
+    .ticket-boardingpass-header{
+        padding:10px 5px 5px 5px;
+        flex-direction: column;
+    }
+    .ticket-boardingpass-header h2{
+        font-size: 18px;
+    }
+    .ticket-boardingpass-main h5{
+        font-size: 16px;
+        letter-spacing: 2px
+    }
+    .ticket-boardingpass-departure-section{
+        justify-content: space-around;
+    }
+    .ticket-boardingpass-departure-section div p{
+        font-size: 14px;
+    }
+    .ticket-boardingpass-departure-section div h4 {
+        font-size: 26px;
+    }
+    .boardingpass-passenger-name-section p{
+        margin: 15px 0 5px 0;
+        font-size: 16px;
+    }
+    .boardingpass-passenger-name-section span{
+        margin: 5px 0 15px 0;
+        font-size: 14px;
+    }
+    .ticket-boardingpass-info-section p{
+        font-size: 16px;
+    }
+    .ticket-boardingpass-info-section span{
+        font-size: 14px;
+    }
+    .ticket-boardingpass-footer{
+        padding: 5px 5px 10px 5px ;
+    }
+    .ticket-boardingpass-footer p{
+        font-size: 12px;
+        font-weight: 800;
+    }
+    .ticket-boardingpass-footer span{
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+    #delete-ticket-btn{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 768px){
+    #check-ticket-form{
+        width: 100%;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .show-ticket-text{
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    #succes-section{
+        font-size: 36px;
+    }
+    .ticket-form{
+        margin-bottom: 20px;
+    }
+    #ticket-contanct-information-section{
+        margin: 20px 0;
+        border: 8px double var(--dark-blue);
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-around;
+    }
+    #ticketId{
+        width: 100%;
+        flex: 1;
+        padding: 0 5px;
+    }
+    #search-btn{
+        width: 100%;
+    }
+    .ticket-form{
+        flex-direction: column;
+    }
+    .ticket-ticketpass{
+        padding: 15px 30px;
+        border: 2px solid var(--dark-blue);
+        border-bottom: none;
+        border-radius: 20px 20px 0 0;
+        gap: 10px;
+    }
+    .ticket-bubble-top{
+        width: 40px;
+        height: 50px;
+        left: -20px;
+        top: calc(100% - 25px);
+    }
+    .ticket-bubble-bottom{
+        width: 40px;
+        height: 50px;
+        right: -20px;
+        bottom: -25px;
+    }
+    .ticket-stamp{
+        right: unset;
+        top: unset;
+        bottom: -100px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .ticket-main section{
+        gap: 20px;
+    }
+    .ticket-boardingpass{
+        border: 2px solid var(--dark-blue);
+        border-top:none;
+        border-radius: 0 0 20px 20px;
+    }
+    .ticket-boardingpass-header{
+        padding: 20px 5px;
+        border: none;
+        border-top: 4px dashed var(--soft-white);
+        flex-direction: row;
+        gap: 20px;
+    }
+    .ticket-boardingpass-header img{
+        width:80px;
+    }
+    .ticket-boardingpass-header h2{
+        font-size: 24px;
+        letter-spacing: 3px;
+    }
+    #delete-ticket-btn{
+        width: 100%;
+        justify-self: center;
+    }
+}
+@media only screen and (max-width: 500px){
+    .show-ticket-text{
+        font-size: 16px;
+    }
+    #succes-section{
+        font-size: 32px;
+    }
+    #ticket-contanct-information-section{
+        border: 6px double var(--dark-blue);
+        grid-template-columns: repeat(1, auto);
+        justify-content: space-around;
+    }
+    #ticket-contanct-information-section p{
+        letter-spacing: 2px;
+    }
+    .ticket-ticketpass{
+        gap: 5px;
+    }
+    .ticket-header{
+        gap: 5px;
+    }
+    .ticket-header img{
+        width: 50px;
+    }
+    .ticket-header h2{
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    .ticket-barcode{
+        font-size: 16px;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    .ticket-main section{
+        gap: 10px;
+    }
+    .ticket-main section h4{
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 5px;
+        color: var(--soft-white);
+    }
+    .ticket-main section span{
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    .ticket-main section p{
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .ticket-footer{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .ticket-footer p{
+        font-size: 14px;
+    }
+    .ticket-footer span{
+        font-weight: 200;
+    }
+    .ticket-boardingpass-header img{
+        width: 65px;
+    }
+    .ticket-boardingpass-header h2{
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .boardingpass-passenger-name-section p{
+        margin: 5px 0;
+    }
+    .boardingpass-passenger-name-section span{
+        margin: 5px 0;
+    }
+    #delete-ticket-btn{
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+@keyframes succes-icon-animation{
+    0%{
+        opacity: 0.3;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.3;
+    }
+}

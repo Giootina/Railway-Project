@@ -1,0 +1,113 @@
+<div class="container">
+  <div *ngIf="trainDetails">
+    <div id="train-details-section">
+      <section>
+        <p class="font-bolder" >#<strong>{{ trainDetails.number }}</strong></p>
+        <p class="label">{{ trainDetails.name }}</p>
+      </section>
+      <section>
+        <p class="font-bolder"><strong>{{ trainDetails.departure }}</strong></p>
+        <p class="label">{{ trainDetails.from }}</p>
+      </section>
+      <section>
+        <p class="font-bolder"><strong>{{ trainDetails.arrive }}</strong></p>
+        <p class="label">{{ trainDetails.to }}</p>
+      </section>
+    </div>
+    <h1 class="page-label">შეიყვანეთ მონაცემები</h1>
+    <form [formGroup]="bookForm" (ngSubmit)="openPaymentPopup()" id="passenger-form">
+      <div id="passenger-form-inner">
+        <div id="passenger-info-form">
+          <p class="passenger-info-form-label">საკონტაქტო ინფორმაცია</p>
+          <section id="contact-info-section">
+            <input type="email" id="inputemail" placeholder="ელ. ფოსტა" formControlName="email" />
+            <input type="text" id="inputphonenumber" placeholder="ტელეფონის ნომერი" formControlName="phoneNumber" />
+          </section>
+          <p class="passenger-info-form-label">მგზავრების ინფორმაცია</p>
+          <div formArrayName="passengers" *ngFor="let passenger of passengers.controls; let i = index">
+            <div [formGroupName]="i">
+              <h3 class="passenger-number">მგზავრი &#8470;{{ i + 1 }}</h3>
+              <section class="passenger-info-section">
+                <input class="inputname" placeholder="სახელი" formControlName="name" />
+                <input class="inputsurname" placeholder="გვარი" formControlName="surname" />
+                <input class="inputidnumber" placeholder="პირადი ნომერი" formControlName="idNumber" />
+                <button class="choose-seat-btn" type="button" (click)="openSeatSelection(i)" >
+                  {{ passengers.controls[i].get('seat.number')?.value || 'ადგილის არჩევა' }}
+                </button>   
+              </section>
+            </div>
+          </div>
+        </div>
+        <div id="invoice-form">
+          <p id="invoice-label">ინვოისი</p>
+          <section   id="seat-price-header">
+            <span>ადგილი</span>
+            <span>ფასი</span>
+          </section>
+          <hr>
+          <div *ngFor="let passenger of passengers.controls"> 
+            <div *ngIf="passenger.get('seat.seatId')?.value" class="seat-price-section">
+              <span>
+                <strong>ადგილი:</strong> {{ passenger.get('seat.number')?.value }}
+              </span>
+              <span>
+                <strong>ფასი:</strong> {{ passenger.get('seat.price')?.value }} ₾
+              </span>
+            </div>
+          </div>
+          <section id="terms-section">
+            <p id="price-label"><strong>საფასურის ჯამი:</strong> {{ calculateTotalPrice() }} ₾</p>
+            <p class="terms-label">
+              <input type="checkbox" formControlName="termsAccepted" /> ვეთანხმები <a href="#" id="terms-link"><span>წესებს და პირობებს</span></a>
+            </p>
+            <br>
+            <button id="order-btn" type="submit"  [disabled]="bookForm.invalid" [attr.active]="bookForm.valid ? '' : null">გადახდა</button>
+          </section>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div [ngClass]="{ 'active': showSeatPopup }" id="seats--popup">
+  <button type="button" (click)="closeSeatSelection()" class="popup-closebtn"><img src="icons/x-icon.svg" alt="Corrupted File!"></button>
+  <h4 id="seat-vagon-label">აირჩიეთ ვაგონი</h4>
+  <div *ngIf="vagons && vagons.length > 0" id="vagons-section">
+    <div *ngFor="let vagon of vagons">
+      <p class="vagon-class-name">{{vagon.name}}</p>
+      <img [src]="vagon.name === 'ბიზნესი' ? 'images/locomotive.png' : 'images/vagon.png'"  alt="{{ vagon.name + ':Corrupted File!' }}" [class.active]="selectedVagon === vagon" (click)="selectVagon(vagon)">
+    </div>
+  </div>
+  <h4 id="selected-seats-label">არჩეული ვაგონის ადგილები</h4>
+  <div *ngIf="selectedSeats.length > 0"  id="seats-section">
+      <button class="seat-icon" [disabled]="seat.isOccupied" (click)="assignSeatToPassenger(seat)" *ngFor="let seat of selectedSeats">
+        <div class="back-border"></div>
+        <div class="left-border"></div>
+        <div class="right-border"></div>
+        <div class="back-border-element"></div>
+        {{ seat.number }}
+      </button>
+   </div>
+</div>
+<div [ngClass]="{ 'active': showPaymentPopup }" id="payment-popup">
+  <div id="payment-popup-header">
+    <img src="icons/visa-icon.svg" alt="Corrupted File!">
+    <img src="icons/mastercard-icon.svg" alt="Corrupted File!">
+    <img src="icons/paypal-icon.svg" alt="Corrupted File!">
+    <h3>Card Payment</h3>
+  </div>
+  <hr>
+  <form [formGroup]="paymentForm" (ngSubmit)="submitPayment()" id="payment-popup-body">
+    <label for="cardNumber">Card Number:</label>
+    <input id="cardNumber" formControlName="cardNumber" placeholder="16-Digits (XXXX-XXXX-XXXX-XXXX)"  maxlength="19" (input)="formatCardNumber($event)"/><br>
+    <label for="cardHolder">Card Holder:</label>
+    <input id="cardHolder" formControlName="cardHolder" placeholder="Card Holder Name" minlength="2" /><br>
+    <label for="expireDate">Expire Day:</label>
+    <div id="datecv2-section">
+      <input id="expireDate" type="date" formControlName="expireDate" />
+      <input id="cv2" type="password" formControlName="cv2" placeholder="CV2" maxlength="3"/>
+    </div>
+    <br>
+    <button type="submit"  [disabled]="paymentForm.invalid" [attr.active]="paymentForm.valid ? '' : null" id="payment-popup-paybtn">გადახდა <strong>({{ calculateTotalPrice() }} ₾)</strong></button>
+    <button type="button" (click)="closePaymentPopup()" class="popup-closebtn"><img src="icons/x-icon.svg" alt="Corrupted File!"></button>
+  </form>
+</div>

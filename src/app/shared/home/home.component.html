@@ -1,0 +1,111 @@
+<div class="container">
+  <div id= "hero-section">
+    <a href="tel:0322420405" id="contact-number"><img src="icons/phone-icon.svg" alt="Corrupted File!">032 2 2 42 04 05</a>
+    <h1 id="hero-text">დაჯავშნე<span> მატარებლის </span> ბილეთები</h1>
+    <form [formGroup]="bookTrainForm" (ngSubmit)="getDepartures()" id= "search-form">
+      <section id="search-form-left">
+        <select id="form-from" formControlName="from">
+          <option value="" disabled selected hidden>საიდან</option>
+          <option *ngFor="let station of stations" [value]="station">
+            {{ station }}
+          </option>
+        </select>
+        <select id="form-to" formControlName="to">
+          <option value="" disabled selected hidden>სად</option>
+          <option *ngFor="let location of filteredLocations" [value]="location">{{ location }}</option>
+        </select>
+      </section>
+      <section id="search-form-right">
+        <input type="date" id="" formControlName="date" />
+        <input type="number" id="form-passengers" formControlName="passengers" min="1" max="4" placeholder="მგზავრების რაოდენობა"/>
+      </section>
+      <button type="submit" 
+         [disabled]="bookTrainForm.invalid" [attr.active]="bookTrainForm.valid ? '' : null"
+         id = "form-submit-btn"><img src="icons/magnifying-glass-icon.svg" alt="Corrupted File!">
+      </button>
+    </form>
+  </div>
+  <div *ngIf="message" class="messagebox">
+    {{ message }}
+  </div>
+  <section id="offers-section">
+    <div class="offer-card">
+      <img src="icons/hand-holding-heart-icon.svg" alt="Corrupted File!">
+      <span>შეუზღუდავი შეთავაზებები</span>
+    </div>
+    <div class="offer-card">
+      <img src="icons/hand-holding-hand-icon.svg" alt="Corrupted File!" >
+      <span>24X7 მხარდაჭერა</span>
+    </div>
+    <div class="offer-card">
+      <img src="icons/user-shield-icon.svg" alt="Corrupted File!" >
+      <span>მონაცემთა დაცვა</span>
+    </div>
+    <div class="offer-card">
+      <img src="icons/money-bill-transfer-icon.svg" alt="Corrupted File!">
+      <span>100% უსაფრთხო გადახდა</span>
+    </div>
+  </section>
+  <h2 id="faq-label">ხშირად დასმული კითხვები</h2>
+  <section id="faq-section">
+    <div class="faq-card" [class.open]="cardStates[0]">
+      <div class="faq-card-header">
+        <span>როგორ შევიძინო ბილეთი ონლაინ?</span>
+        <button (click)="toggleCard(0)"><img src="icons/arrow-icon.svg" alt="Corrupted File" [class.rotated]="cardStates[0]"></button>
+      </div>
+      <div class="faq-body">
+        <hr>
+        <p>პირველ რიგში ირჩევთ სასურველი მიმართულების ქალაქებს, 
+           უთითებთ გამგზავრების თარიღს, მგზავრების რაოდენობას 
+           და ეძებთ.  მოძებნილ სიაში ირჩევთ სასურველ რეისს და 
+           განაგრძობთ ბილეთების შეძენას.შემდეგ ავსებთ მგზავრების 
+           სახელს, გვარსა და პირად ნომერს და გადადიხართ გადახდაზე.
+        </p>
+      </div>
+    </div>
+    <div class="faq-card" [class.open]="cardStates[1]">
+      <div class="faq-card-header">
+        <span>როგორ დავაბრუნო შეძენილი ბილეთი?</span>
+        <button (click)="toggleCard(1)"><img src="icons/arrow-icon.svg" alt="Corrupted File" [class.rotated]="cardStates[1]"></button>
+        </div>
+      <div class="faq-body">
+        <hr>
+        <p>ბილეთის დაბრუნება შესაძლებელია,"ბილეთის შემოწმება/დაბრუნება გვერდიდან"
+           ბილეთზე დატანილია დაბრუნების ღილაკი, გაითვალისიწნეთ, საწყისი სადგურიდან 
+           მატარებლის გასვლამდე ერთ საათზე მეტი უნდა იყოს დარჩენილი.შენიშვნა: მგზავრს 
+           უბრუნდება დოკუმენტის (ბილეთის) თანხა საკომისიო ღირებულების გარეშე.
+        </p>
+      </div>
+    </div>
+    <div class="faq-card" [class.open]="cardStates[2]">
+      <div class="faq-card-header">
+        <span>რამდენ ბილეთს ვიყიდი ერთი პირადობით?</span>
+        <button (click)="toggleCard(2)"><img src="icons/arrow-icon.svg" alt="Corrupted File" [class.rotated]="cardStates[2]"></button>
+      </div>
+      <div class="faq-body">
+        <hr>
+        <p>ერთი პირადობის დამადასტურებელი დოკუმენტით შესაძლებელია მაქსიმუმ 4
+           ბილეთის შეძენა ერთი მიმართულებით. აუცილებელია, რომ ის პიროვნება 
+           ვის სახელზეც არის გაფორმებული ყველა ბილეთი, იყოს ერთ-ერთი მგზავრი.
+        </p>
+      </div>
+    </div>
+    <div class="faq-card" [class.open]="cardStates[3]">
+      <div class="faq-card-header">
+        <span>რა მჭირდება მატარებელში ჩასხდომისას?</span>
+        <button (click)="toggleCard(3)"><img src="icons/arrow-icon.svg" alt="Corrupted File" [class.rotated]="cardStates[3]"></button>
+      </div>
+      <div class="faq-body">
+        <hr>
+        <p>მგზავრი მატარებელში დაიშვება მხოლოდ სამგზავრო დოკუმენტისა და ასევე პიროვნების 
+           დამადასტურებელი მოწმობის (ID-ბარათი / ბიომეტრიული პასპორტი) წარდგენის შემთხვევაში.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+

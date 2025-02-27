@@ -1,0 +1,443 @@
+#train-details-section{
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 25px 10px;
+  color: var(--soft-white);
+  background-color: var(--dark-blue);
+  border-radius: 10px;
+  border: 10px double var(--simple-white);
+  display: flex;
+  justify-content: space-between;
+}
+#train-details-section section{
+  flex: 1
+}
+#train-details-section section p{
+  text-align: center;
+}
+#passenger-form{
+  width: 100%;
+}
+#passenger-form-inner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+#passenger-info-form{
+  border-radius: 10px;
+  width: 75%;
+  background-color: var(--gray);
+  padding: 20px 15px;
+  border: 10px double var(--dark-blue);
+}
+.passenger-info-form-label{
+  margin: 25px 0;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--dark-blue);
+}
+#contact-info-section{
+  width: 100%;
+  display: flex;
+  gap: 15px;
+}
+#contact-info-section input{
+  flex:1;
+  height: 50px;
+  padding: 0 10px;
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  outline: none;
+}
+.passenger-number{
+  margin: 15px 0;
+  color: var(--blue);
+  font-weight: 600;
+}
+.passenger-info-section{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.passenger-info-section input{
+  width: 30%;
+  height: 50px;
+  padding: 0 10px;
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  outline: none;
+}
+.choose-seat-btn{
+  width: 10%;
+  padding: 5px;
+  font-weight: 800;
+  color: var(--soft-white);
+  background-color: var(--blue);
+  border-radius: 10px;
+}
+#invoice-form{
+  width: 25%;
+  height: 380px;
+  border-radius: 10px;
+  background-color: var(--gray);
+  border: 10px double  var(--dark-blue);
+  overflow: hidden;
+}
+#invoice-label{
+  height: 50px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 10px;
+  color: var(--soft-white);
+  background-color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#seat-price-header{
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#seat-price-header span{
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--dark-blue);
+}
+.seat-price-section{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.seat-price-section span{
+  margin: 5px;
+}
+#price-label{
+  padding: 10px 0;
+  font-size: 18px;
+  text-align: center;
+  color: var(--dark-blue);
+  background-color: var(--simple-white);
+}
+.terms-label{
+  padding: 5px 0;
+  font-size: 14px;
+  display: flex;
+}
+#order-btn{
+  width: 75%;
+  height: 50px;
+  margin: 0px auto;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  display: block;
+}
+body.popup-open{
+  overflow: hidden;
+}
+#seats--popup.active,#payment-popup.active {
+  display: block;
+}
+#seats--popup,#payment-popup {
+  display: none;
+  padding: 20px;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#seats--popup{
+  width: 480px;
+  background-color: var(--simple-white);
+  border: 2px solid var(--dark-blue);
+}
+#vagons-section{
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+#vagons-section img{
+  width: 100%;
+  cursor: pointer;
+  transition: 0.25s;
+}
+#vagons-section .active {
+  transform: scale(1.1);
+  will-change: filter;
+  backface-visibility: hidden;
+  filter: drop-shadow(0px 10px 5px var(--blue));
+}
+#selected-seats-label{
+  margin: 15px 0 25px 0;
+  color: var(--blue);
+}
+h3,h4{
+  text-align: center;
+}
+#seats-section{
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 10px; 
+}
+#seats-section :nth-child(4n+2) {
+  margin-right: 50%;
+}
+#seats-section :nth-child(4n+3) {
+  margin-left: 50%;
+}
+#seat-vagon-label{
+  margin: 15px 0;
+  color: var(--blue);
+}
+.vagon-class-name{
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--coral);
+  text-align: center;
+}
+.seat-icon{
+  width: 50px;
+  height: 40px;
+  font-weight: 800;
+  color: var(--soft-white);
+  background-color: var(--succes-green);
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px 5px 0 0;
+  display: block;
+  position: relative;
+}
+button.seat-icon[disabled] {
+  background-color: var(--error-red)!important;
+}
+.back-border{
+  width: 100%;
+  height: 5px;
+  background-color: var(--dark-blue);
+  position: absolute;
+  bottom: -5px;
+}
+.left-border{
+  width: 6px;
+  height: 75%;
+  background-color: var(--dark-blue);
+  border-radius: 5px 5px 0 5px;
+  position: absolute;
+  left: -3px;
+  bottom: -5px; 
+}
+.right-border{
+  width: 6px;
+  height: 75%;
+  background-color: var(--dark-blue);
+  border-radius: 5px 5px 5px 0;
+  position: absolute;
+  right: -3px;
+  bottom: -5px;
+}
+.back-border-element{
+  width: 75%;
+  height: 4px;
+  background-color: var(--dark-blue);
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,0px);
+}
+#payment-popup{
+  width: 500px;
+  border: 2px solid var(--dark-blue);
+  background-color: var(--gray);
+}
+#payment-popup-header{
+  width: 100%;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#payment-popup-header h3{
+  font-weight: 800;
+  color: var(--dark-blue);
+}
+#payment-popup hr{
+  margin: 20px 0;
+}
+#payment-popup-body{
+  display: flex;
+  flex-direction: column;
+}
+#payment-popup label{
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+#payment-popup input{
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+#datecv2-section{
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+#expireDate {
+  appearance: none;
+  background-color: var(--simple-white);
+}
+#payment-popup-paybtn{
+  width: 100%;
+  height: 40px;
+  font-weight: 600;
+  color:var(--gray);
+  border-radius: 5px;
+  background-color: var(--dark-blue);
+}
+.popup-closebtn{ 
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: unset;
+  overflow: hidden;
+}
+.popup-closebtn img:hover{
+  background: radial-gradient(circle, var(--error-red) 30%, var(--gray) 50%);
+}
+@media only screen and (max-width: 1024px) {
+  #seat-price-header{
+    justify-content: space-between;
+  }
+  .seat-price-section span{
+    margin: 5px;
+    font-size: 14px;
+  }
+  #price-label{
+    padding: 10px 0;
+    font-size: 16px;
+    text-align: center;
+    color: var(--dark-blue);
+    background-color: var(--simple-white);
+  }
+  .terms-label{
+    padding: 10px 3px;
+    font-size: 12px;
+    display: flex;
+  }
+  #order-btn{
+    width: 60%;
+    height: 50px;
+    font-size: 16px;
+  }
+  .choose-seat-btn{
+    font-size: 12px;
+    background-color: var(--blue);
+  }
+}
+@media only screen and (max-width: 768px){
+  #train-details-section{
+    padding: 20px 5px;
+    font-size: 14px;
+  }
+  #passenger-form-inner{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #passenger-info-form{
+    width: 100%;
+  }
+  #invoice-form{
+    width: 80%;
+  }
+  .passenger-info-section{
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+  }
+  #contact-info-section{
+    height: 110px;
+    padding: 0px 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .passenger-info-section input{
+    width: 100%;
+  }
+  .passenger-info-section button{
+    width: 100%;
+  }
+  #payment-popup{
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 500px){
+  .passenger-info-form-label{
+    margin: 30px 0;
+    font-size: 16px;
+  }
+  #vagons-section{
+    margin-bottom: 25px;
+  }
+  #selected-seats-label{
+    display: none;
+  }
+  #seats--popup.active{
+    width: 300px;
+  }
+  #seats-section{
+    width: 100%;
+  }
+  .vagon-class-name{
+    font-size: 12px;
+  }
+  #vagons-section .active {
+    transform: scale(1.05);
+
+    filter: drop-shadow(0px 5px 5px var(--blue));
+  }
+  .seat-icon{
+    width: 40px;
+    height: 30px;
+  }
+  .back-border{
+    height: 4px;
+    bottom: -4px;
+  }
+  .left-border{
+    width: 4px;
+    left: -2px;
+    bottom: -4px; 
+  }
+  .right-border{
+    width: 4px;
+    right: -2px;
+    bottom: -4px;
+  }
+  .back-border-element{
+    width: 70%;
+    height: 3px;
+    bottom: -1px;
+  }
+}

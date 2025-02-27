@@ -1,0 +1,107 @@
+<div class="container">
+  <div [style.display]="ticketData ? 'none' : 'block'">
+    <h1 class="page-label">ბილეთის შემოწმება</h1>
+    <p class="messagebox"><strong>{{ message }}</strong></p>
+    <form [formGroup]="ticketIdForm" (ngSubmit)="checkTicket()" id="check-ticket-form">
+      <input id="ticketId" formControlName="ticketId" placeholder="შეიყვანეთ ბილეთის ნომერი: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" maxlength="36" (input)="formatTicketId($event)"/>
+      <button type="submit"  id="search-btn"  [disabled]="ticketIdForm.invalid" [attr.active]="ticketIdForm.valid ? '' : null">შემოწმება</button>
+    </form>
+  </div>
+  <div *ngIf="ticketData">
+    <img src="icons/success-icon.svg" alt="Corrupted File!" id="success-icon">
+    <p class="show-ticket-text">ბილეთის საფასური გადახდილია</p>
+    <section id="ticket-contanct-information-section">
+      <p>E-mail:<br><a href="mailto:{{ ticketData.email }}">{{ ticketData.email }}</a></p>
+      <p>ტელეფონი:<br><a href="tel:{{ ticketData.phone }}">{{ ticketData.phone }}</a></p>
+      <p>შეძენის თარიღი:<br><span>{{ ticketData.date.split(" ").slice(1).join(" ") }}</span></p>
+      <p>სულ გადახდილი:<br><span>{{ ticketData.ticketPrice }} ₾</span></p>
+    </section>
+    <div class="ticket-form"  *ngFor="let passenger of ticketData.persons" >
+      <div class="ticket-ticketpass">
+        <img class="ticket-stamp" src="icons/ticket-stamp.svg" alt="Corrupted File!" [ngStyle]="{'transform': 'rotate(' + passenger.stampRotationDegrees + 'deg)'}"/>
+        <div class="ticket-bubble-top"></div>
+        <div class="ticket-bubble-bottom"></div>
+        <div class="ticket-header">
+          <img src="images/train-logo.png" alt="Corrupted File!">
+          <h2>Railway Express</h2>
+        </div>
+        <p class="ticket-barcode">{{ ticketData.id }}</p>
+        <div class="ticket-main">
+          <section>
+            <p>საიდან :</p>
+            <h4>{{ ticketData.train.from === 'თბილისი'? 'TBS' : ticketData.train.from === 'ბათუმი' ? 'BTM' : ticketData.train.from === 'ფოთი'? 'POT' : '' }}</h4>
+            <span>{{ ticketData.train.from }}</span>
+            <span>{{ ticketData.train.departure }}</span>
+            <p>{{ ticketData.train.date }}</p>    
+          </section>
+          <section>
+            <p>სად:</p>
+            <h4>{{ ticketData.train.to === 'თბილისი'? 'TBS' : ticketData.train.to === 'ბათუმი' ? 'BTM' : ticketData.train.to === 'ფოთი'? 'POT' : '' }}</h4>
+            <span>{{ ticketData.train.to }}</span>
+            <span>{{ ticketData.train.arrive }}</span>
+            <p>{{ ticketData.train.date }}</p>
+          </section>
+        </div>
+        <div class="ticket-footer">
+          <p>მგზავრი<br><span>{{ passenger.name }} {{ passenger.surname }}</span></p>
+          <p>რეისი<br><span># {{ ticketData.train.number }}</span></p>
+          <p>ადგილი<br><span>{{ passenger.seat.number }}</span></p>
+          <p>ფასი<br><span>{{ passenger.seat.price }} ₾</span></p>
+        </div>
+      </div>
+      <div class="ticket-boardingpass">
+        <div class="ticket-boardingpass-header">
+          <img src="images/train-logo.png" alt="Corrupted File!">
+          <h2>Railway Express</h2>
+        </div>
+        <div class="ticket-boardingpass-main">
+          <h5>Boarding Pass</h5>
+          <br>
+          <section class="ticket-boardingpass-departure-section">
+            <div>
+              <p>საიდან :</p>
+              <h4>{{ ticketData.train.from === 'თბილისი'? 'TBS' : ticketData.train.from === 'ბათუმი' ? 'BTM' : ticketData.train.from === 'ფოთი'? 'POT' : '' }}</h4>
+              <span>{{ ticketData.train.from }}</span>
+              <span>{{ ticketData.train.departure }}</span>
+              <p>{{ ticketData.train.date }}</p>
+            </div>
+            <div>
+              <p>სად:</p>
+              <h4>{{ ticketData.train.to === 'თბილისი'? 'TBS' : ticketData.train.to === 'ბათუმი' ? 'BTM' : ticketData.train.to === 'ფოთი'? 'POT' : '' }}</h4>
+              <span>{{ ticketData.train.to }}</span>
+              <span>{{ ticketData.train.arrive }}</span>
+              <p>{{ ticketData.train.date }}</p>   
+            </div>
+          </section>
+          <section class="boardingpass-passenger-name-section">
+            <p>მგზავრი</p>
+            <span> {{ passenger.name }} {{ passenger.surname }} </span>
+          </section>
+          <section class="ticket-boardingpass-info-section">
+            <p>რეისი<br><span># {{ ticketData.train.number }}</span></p>
+            <p>ადგილი<br><span> {{ passenger.seat.number }} </span></p>
+            <p>ფასი<br><span> {{ passenger.seat.price }} ₾ </span></p>
+          </section>
+        </div>
+        <hr>
+        <div class="ticket-boardingpass-footer">
+        <p>მგზავრის პირადი ნომერი:</p>  
+        <span>{{ passenger.idNumber }}</span>
+        </div>
+      </div>
+    </div>
+    <button id="delete-ticket-btn" (click)="deleteTicket()">
+      <span>ბილეთის გაუქმება </span>
+      <img src="icons/trash-can-icon.svg" alt="Corrupted File!" >
+      <div id="button-bubble-left"></div>
+      <div id="button-bubble-right"></div>
+    </button>
+  </div>
+</div>
+
+
+
+
+
+
+
